@@ -7,7 +7,7 @@ const DUMMY_PLACES = [
       id: 'p1',
       title: 'Empire State Building',
       description: 'One of the most famous sky scrapper in rthe world!',
-      imageUrl: 'https://picsum.photos/200',
+      imageUrl: 'https://picsum.photos/400',
       address: '20 W 34th St, New York, NY 10001',
       location: {
          lat: 40.7484405,
@@ -19,7 +19,7 @@ const DUMMY_PLACES = [
       id: 'p2',
       title: 'Empire State Building',
       description: 'One of the most famous sky scrapper in rthe world!',
-      imageUrl: 'https://picsum.photos/200',
+      imageUrl: 'https://picsum.photos/400',
       address: '20 W 34th St, New York, NY 10001',
       location: {
          lat: 40.7484405,
