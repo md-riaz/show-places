@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Redirect } from 'react-router-dom';
 import { Switch } from 'react-router-dom/cjs/react-router-dom.min';
-import { UpdatePlace } from './places/components/UpdatePlace';
+import { UpdatePlace } from './places/pages/UpdatePlace';
 import { NewPlace } from './places/pages/NewPlace';
 import { UserPlaces } from './places/pages/UserPlaces';
 import { MainNavigation } from './shared/components/Navigation/MainNavigation';
