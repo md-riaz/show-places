@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import Button from '../../shared/components/FormElements/Button';
 import { Input } from '../../shared/components/FormElements/Input';
 import Card from '../../shared/components/UIElements/Card';
@@ -8,10 +8,12 @@ import {
    VALIDATOR_MINLENGTH,
    VALIDATOR_REQUIRE,
 } from '../../shared/util/validators';
-
+import { AuthContext } from '../../shared/context/auth-context';
 import './Auth.css';
 
 export const Auth = () => {
+   const auth = useContext(AuthContext);
+
    const [isLoginMode, setIsLoginMode] = useState(true);
 
    const [formState, inputHandler, setFormData] = useForm(
@@ -31,6 +33,7 @@ export const Auth = () => {
    const authSubmitHandler = (e) => {
       e.preventDefault();
       console.log(formState.inputs);
+      auth.login();
    };
 
    const switchModeHandler = () => {
@@ -84,13 +87,14 @@ export const Auth = () => {
             />
             <Input
                element='input'
-               id='passowrd'
-               type='passowrd'
-               label='Passowrd'
+               id='password'
+               type='password'
+               label='password'
                validators={[VALIDATOR_MINLENGTH(5)]}
                errorText='Please enter a valid password, at least 5 characters.'
                onInput={inputHandler}
             />
+
             <Button type='submit' disabled={!formState.isValid}>
                {isLoginMode ? 'LOGIN' : 'SIGNUP'}
             </Button>

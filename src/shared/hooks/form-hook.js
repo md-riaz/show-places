@@ -2,7 +2,7 @@ import { useCallback, useReducer } from 'react';
 
 const formReducer = (state, action) => {
    switch (action.type) {
-      case 'INPUT_CHANCE':
+      case 'INPUT_CHANGE':
          let formIsValid = true;
          for (const inputId in state.inputs) {
             if (!state.inputs[inputId]) {
@@ -45,7 +45,7 @@ export const useForm = (initialInputs, initialFormValidity) => {
 
    const inputHandler = useCallback((id, value, isValid) => {
       dispatch({
-         type: 'INPUT_CHANCE',
+         type: 'INPUT_CHANGE',
          value: value,
          isValid: isValid,
          inputId: id,
